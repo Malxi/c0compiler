@@ -1,0 +1,19 @@
+const a;
+const int a = 2, d = -3, a = 1;
+iNt i;
+char ch;
+int j, k;
+int slen, buf[100];
+chAr str[100];
+int 
+char a[1111, ccc;
+char c
+int test2, "2222", test1,
+char sss, a111], dddd;
+int arr1[], arr2[];
+
+void main(){
+    int a;
+    int i;
+    const int a;
+}

@@ -1,0 +1,9 @@
+# Python:
+.idea
+.vscode
+bin
+cmake-build-debug
+obj
+*.cbp
+*.depend
+*.layout

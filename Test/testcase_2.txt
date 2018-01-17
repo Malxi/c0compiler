@@ -1,0 +1,54 @@
+int f;
+
+void fff{
+    int a, b;
+	f = 4;
+    
+    a = 2;
+    b = 2;
+    
+    a = a * b;
+    f = a * b;
+    f = a * b;
+    b = a / b;
+    f = a / b;
+    f = 4;
+    a = a * f;
+    
+    printf("a expected: 16 res: ", 16);
+    printf("\n");
+    
+}
+
+void main(){
+	int a, b, c, d, e;
+	a = 1;
+	b = 1;
+	c = 1;
+	d = 1;
+	e = 1;
+	f = 1;
+	c = a + b;
+	printf("c expected: 2 res: ", c);
+	printf("\n");
+	d = a + b;
+	printf("d expected: 2 res: ", d);
+	printf("\n");
+	e = c + d;
+	printf("e expected: 4 res: ", e);
+	printf("\n");
+	a = a + e;
+	printf("a expected: 5 res: ", a);
+	printf("\n");
+	e = a + b;
+	a = 6;
+	printf("e expected: 6 res: ", e);
+	printf("\n");
+	e = a + f;
+	printf("e expected: 7 res: ", e);
+	printf("\n");
+	fff;
+	e = a + f;
+	printf("e expected: 10 res: ", e);
+	printf("\n");
+}

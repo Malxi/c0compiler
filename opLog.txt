@@ -1,0 +1,25 @@
+malxi:
+    with temp register allocate
+    sw 144
+    lw 115
+    length 1380
+    
+    with temp register allocate and cover constant
+    sw 144
+    lw 115
+    length 1254
+    
+    with global and temp allocate
+    sw 143
+    lw 113
+    length 1535
+
+    with temp register allocate and cover constant and constant folding and variable folding
+    lw 115
+    sw 116
+    length 1158 (with nop)
+
+    with temp register allocate and cover constant and constant folding and variable folding and parameters register allocate
+    lw 83
+    sw 88
+    length 1167 (with nop)

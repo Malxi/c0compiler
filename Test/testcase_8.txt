@@ -1,0 +1,18 @@
+void main()
+{
+    char _op;
+    scanf(_op);
+    switch(_op)
+    {
+        case -'s':   ;
+        case 'c':   ;
+        case 'n':   ;
+
+        default:
+            printf("Error operation!");
+    }
+    
+    if(){}else{}
+    
+    
+}

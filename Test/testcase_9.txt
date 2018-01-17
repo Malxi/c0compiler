@@ -1,0 +1,20 @@
+
+int pow_n_m(){
+	return (1);
+}
+
+int pow_n_m(int b, int e){
+	int ans;
+	int tmp;
+	int buf[100];
+    ans = 1;
+	tmp = ans + 2;
+	tmp = 122 + 333;
+	ans = buf[20];
+	{	
+		buf[ans] = 3;
+		tmp = ans + 2;
+		tmp = 122 + 333;
+		ans = buf[20];
+	}
+}

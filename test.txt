@@ -1,0 +1,166 @@
+conSt int con_len = 100;
+const cHar con_tar = '+';
+const int con_s = 13, con_e = 23;
+const char con_c1 = 'a', con_c2 = 'z';
+
+iNt i;
+char ch;
+int j, k;
+int slen, buf[100];
+chAr str[100];
+
+int pow_n_m(int b, int e){
+	int ans;
+	int tmp;
+    ans = 1;
+	while(e > 0){
+		tmp = e - e/2*2;
+		switch(tmp){
+			case 1: ans = b * ans;
+			case 0: {}
+			default: {}
+		}
+		e = e / 2;
+		b = b * b;
+	}
+	return (ans);
+}
+
+int fact(int n){
+	if(n < 0) return (-1);
+    else{}
+	if(n == 0) return (1);
+	else{}
+	if(n == 1) return (1);
+	else{}
+	return (n*fact(n-1));
+}
+
+int search_tar{
+	i = 0;
+	while(i < slen){
+		if(con_tar == str[i]) return (i);
+		else{}
+		i = i + 1;
+	}
+	return (-1);
+}
+
+int binary_search(int v, int low, int high){
+	int mid;
+	if(low <= high){
+		mid = (high + low) / 2;
+		if(v == buf[mid]) return (mid);
+		else{}
+		if(v > buf[mid]) return (binary_search(v, mid + 1, high));
+		else{}
+		return (binary_search(v, low, mid - 1));
+	}else{
+		return (-1);
+	} 
+}	
+			
+void setup{
+	int i;
+	i = 0;
+	while(i < con_len){
+		buf[i] = i*i;
+		i = i + 1;
+	}
+	i = 0;
+	j = 35;
+	str[0] = 32;
+	str[1] = 33;
+	while(j <= 126){
+		str[i] = j;
+		j = j + 1;
+		i = i + 1;
+	}
+	str[i] = 0;
+	slen = i;
+}
+
+void print_str(int s, int e){
+	if(s < 0) printf("printf_str: error!");
+	else{}
+	if(e > slen) printf("printf_str: error!");
+	else{
+		while(s < e){
+			printf(str[s]);
+			s = s + 1;
+		}
+	}
+}
+
+void dist_c1_c2{
+	int d1, d2;
+	int tmp;
+	i = 0;
+	while(i < slen){
+		if(str[i] == con_c1) d1 = i;
+		else{}
+		if(str[i] == con_c2) d2 = i;
+		else{}
+		i = i + 1;
+	}
+	tmp = d1 - d2;
+	if(tmp > 0) k = tmp;
+	else k = -tmp;
+}
+
+void sum_n_m(int n, int m){
+	int d1;
+	int d2;
+	int tmp;
+    
+	i = 1;
+	while(i * i<= n) i = i + 1;
+	n = (i - 1) * (i - 1);
+	i = 1;
+	while(i * i<= m) i = i + 1;
+	m = (i - 1) * (i - 1);
+	d1 = binary_search(n, 0, con_len-1);
+	d2 = binary_search(m, 0, con_len-1);
+	if(d1 > d2){
+		tmp = d1;
+		d1 = d2;
+		d2 = tmp;	
+	}else{}
+	k = 0;
+	while(d1 <= d2){
+		k = k + buf[d1];
+		d1 = d1 + 1;
+	}
+}
+
+void main(){
+	int n, m;
+	int tmp;
+	
+	setup;
+	
+	printf("Input integer n(0<n<100): ");
+	
+	scanf(n);
+	printf("The square root of n is: ", binary_search(n, 0, con_len-1));
+	tmp = fact(n);
+	printf("The n! is: ", Tmp);
+
+	printf("Input n, m: ");
+	scanf(n, M);
+	
+	sum_n_m(n, m);
+	printf("The sum of squares from n to m is: ", k);
+	
+	k = pow_n_m(n, m);
+	PRintf("The n^m is: ", k);
+
+	printf("Search constant char: ", con_tar);
+	printf("The index of '+' is (in string chars): ",searCh_tar);
+	
+	dist_c1_c2;
+	printf("The distance between 'a' and 'z' is: ", k);
+	
+	PRintf("printf str '0123456789': ");
+	print_str(con_s, con_e);
+}

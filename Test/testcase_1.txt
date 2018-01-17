@@ -1,0 +1,37 @@
+int count(int c){
+    int d;
+    d = 1 + 2 + 3;
+    d = d + 4 + 5;
+    d = d + 6;
+    d = d * c;
+    d = d / 3;
+    return (d);
+}
+
+void main()
+{
+    int a, b , c;
+
+	a = 1 + 2+ 3 +4 +5 +6;
+	b =  1 + 2+ 3 +4 +5 +6;
+	c =  1 + 2+ 3 +4 +5 +6;
+    
+    printf(a);
+    printf("\n");
+    printf(b);
+    printf("\n");
+    printf(c);
+    printf("\n");
+    
+    a = count(a);
+    b = count(b);
+    c = count(c);
+    
+    printf(a);
+    printf("\n");
+    printf(b);
+    printf("\n");
+    printf(c);
+    printf("\n");
+    
+}

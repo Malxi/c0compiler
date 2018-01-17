@@ -1,0 +1,39 @@
+int pow_n_m(int b, int e){
+	int ans;
+	int tmp;
+    ans = 1;
+	while(e > 0){
+		tmp = e - e/2*2;
+		switch(tmp){
+			case 1: ans = b * ans;
+			case 0: {}
+			default: {}
+		}
+		e = e / 2;
+		b = b * b;
+	}
+	return (ans);
+}
+
+void main(){
+    const int nt = 3, et = 3;
+    int n, e;
+    int ans;
+    char c;
+    
+    n = 2;
+    e = 10;
+    
+    ans = pow_n_m(n, e);
+    
+    printf(ans);
+    printf("\n");
+    
+    if(ans == 1024){
+    
+        ans = pow_n_m(nt, et);
+    }else ans = 0;
+    
+    printf(ans);
+    
+}

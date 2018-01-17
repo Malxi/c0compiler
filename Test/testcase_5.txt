@@ -1,0 +1,45 @@
+int buf[100];
+
+int binary_search(int v, int low, int high){
+	int mid;
+	if(low <= high){
+		mid = (high + low) / 2;
+		if(v == buf[mid]) return (mid);
+		else{}
+		if(v > buf[mid]) return (binary_search(v, mid + 1, high));
+		else{}
+		return (binary_search(v, low, mid - 1));
+	}else{
+		return (-1);
+	} 
+}
+
+void setup{
+    int i;
+    i = 0;
+    while(i < 100){
+        buf[i] = i * i;
+        i = i + 1;
+    }
+}
+
+void main(){
+    int tar;
+    int index;
+    
+    tar = 81;
+    setup;
+    
+    index = binary_search(tar, 0, 99);
+    
+    printf(index);
+    printf("\n");
+    
+    scanf(tar);
+    
+    index = binary_search(tar, 0, 99);
+    
+    printf(index);
+    printf("\n");
+    
+}

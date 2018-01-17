@@ -1,0 +1,26 @@
+int hasret{
+    int c;
+    int t;
+    
+}
+
+void noret{
+    int t;
+    
+    return (t);
+}
+
+void noparent{
+    int t;
+    
+    return t;
+}
+
+void main{
+    const int c = 43;
+    int i;
+    
+    c = i;
+    
+
+}

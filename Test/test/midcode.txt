@@ -1,0 +1,144 @@
+(0) label__asfunc_1
+(1) aa = a
+(2) cc = c
+(3) bb = 1
+(4) ifFalse aa > bb goto (label_t1)19
+(5) t4 = cc - 105
+(6) ifFalse t4 == 0 goto (label_t5)12
+(7) t7 = aa - bb
+(8) t8 = _asfunc_1(t7, t3)
+(9) t9 = a * t8
+(10) ret t9
+(11) goto 17
+(12) label_t5
+(13) t10 = aa - 1
+(14) t12 = _asfunc_1(t10, t11)
+(15) t13 = a * t12
+(16) ret t13
+(17) label_t2
+(18) goto 27
+(19) label_t1
+(20) ifFalse cc == 105 goto (label_t16)23
+(21) printf(t19)
+(22) goto 25
+(23) label_t16
+(24) printf(t21)
+(25) label_t15
+(26) ret t0
+(27) label_t14
+(28) label_min
+(29) ifFalse a < b goto (label_t22)32
+(30) ret a
+(31) goto 39
+(32) label_t22
+(33) ifFalse a == b goto (label_t24)36
+(34) ret a
+(35) goto 38
+(36) label_t24
+(37) ret b
+(38) label_t25
+(39) label_t23
+(40) label_max
+(41) ifFalse a > b goto (label_t26)44
+(42) ret a
+(43) goto 46
+(44) label_t26
+(45) ret b
+(46) label_t27
+(47) label_no_sfc
+(48) aa = a
+(49) bb = b
+(50) ifFalse aa > 2000 goto (label_t28)55
+(51) t29 = 0 - 1
+(52) res = t29
+(53) ret
+(54) goto 56
+(55) label_t28
+(56) label_t31
+(57) t32 = min(aa, bb)
+(58) begin = t32
+(59) t33 = max(aa, bb)
+(60) end = t33
+(61) t34 = begin + end
+(62) t35 = end - begin
+(63) t36 = t35 + 1
+(64) t37 = t34 * t36
+(65) t39 = t37 / 2
+(66) res = t39
+(67) label_print1
+(68) printf(t41)
+(69) printf(res1)
+(70) t45 = 0 + res2
+(71) t47 = t45 + 2
+(72) t48 = t47 - 1
+(73) t49 = t48 - 1
+(74) printf(t44, t49)
+(75) label_print2
+(76) t50 = 0 - 1
+(77) ifFalse res != t50 goto (label_t52)80
+(78) printf(t54, res)
+(79) goto 82
+(80) label_t52
+(81) printf(t57)
+(82) label_t55
+(83) label_main
+(84) scanf(s_firi, s_seci, s_firc, s_secc)
+(85) ifFalse s_firi < 0 goto (label_t60)89
+(86) printf(t62)
+(87) ret
+(88) goto 96
+(89) label_t60
+(90) ifFalse s_seci < 0 goto (label_t64)94
+(91) printf(t66)
+(92) ret
+(93) goto 95
+(94) label_t64
+(95) label_t67
+(96) label_t63
+(97) ifFalse s_firi >= s_seci goto (label_t68)100
+(98) ni = s_firi
+(99) goto 102
+(100) label_t68
+(101) ni = s_seci
+(102) label_t69
+(103) ifFalse ni <= 0 goto (label_t70)112
+(104) label_t71
+(105) t72 = 0 + 0
+(106) ifFalse ni <= t72 goto (label_t74)110
+(107) t75 = ni + 1
+(108) ni = t75
+(109) goto 104
+(110) label_t74
+(111) goto 115
+(112) label_t70
+(113) t77 = ni + 1
+(114) ni = t77
+(115) label_t76
+(116) t79 = 0 + s_firc
+(117) t81 = t79 - s_secc
+(118) ifFalse t81 == 1 goto (label_t82)121
+(119) nc = 1
+(120) goto 135
+(121) label_t82
+(122) ifFalse t81 == 2 goto (label_t84)125
+(123) nc = 2
+(124) goto 135
+(125) label_t84
+(126) ifFalse t81 == -1 goto (label_t86)129
+(127) nc = 3
+(128) goto 135
+(129) label_t86
+(130) ifFalse t81 == -2 goto (label_t89)133
+(131) nc = 4
+(132) goto 135
+(133) label_t89
+(134) nc = 5
+(135) label_t78
+(136) t93 = _asfunc_1(ni, t3)
+(137) resulti = t93
+(138) t94 = _asfunc_1(nc, t11)
+(139) resultc = t94
+(140) t95 = print1(resulti, resultc)
+(141) t96 = no_sfc(resulti, resultc)
+(142) t97 = print2()
+(143) ret

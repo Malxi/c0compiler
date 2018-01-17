@@ -1,0 +1,246 @@
+.data 0x7ffff000
+str1: .asciiz "OVERFLOW! "
+str2: .asciiz "complete number: "
+str3: .asciiz "  "
+str4: .asciiz "  "
+str5: .asciiz "---------------------------------------------------------------\n"
+str6: .asciiz " "
+str7: .asciiz "  "
+str8: .asciiz "The total is "
+.text
+li $sp,0x10010000
+add $sp,$sp,0
+add $fp,$sp,$zero
+add $sp,$sp,40
+jal label14
+li $v0,10
+syscall
+label1:
+sw $ra,4($fp)
+sw $s0,8($fp)
+lw $s0,4136($fp)
+sw $s1,12($fp)
+lw $s1,4144($fp)
+sw $s2,16($fp)
+lw $s2,4140($fp)
+sw $s3,20($fp)
+lw $s3,4156($fp)
+sw $s4,24($fp)
+lw $s4,4172($fp)
+sw $s5,28($fp)
+lw $s5,4148($fp)
+sw $s6,32($fp)
+lw $s6,4152($fp)
+sw $s7,36($fp)
+lw $s7,4168($fp)
+li $t0,2
+add $s2,$t0,$zero
+label2:
+li $t0,1
+sub $t1,$zero,$t0
+add $s1,$t1,$zero
+add $s5,$s2,$zero
+add $s0,$t0,$zero
+sw $t1,4176($fp)
+label3:
+div $s2,$s0
+mflo $t0
+mult $t0,$s0
+mflo $t1
+add $s6,$t1,$zero
+seq $t2,$s6,$s2
+sw $t0,4180($fp)
+sw $t1,4184($fp)
+sw $t2,4188($fp)
+beq $t2,$zero,label4
+li $t0,1
+add $t1,$s1,$t0
+add $s1,$t1,$zero
+sub $t2,$s5,$s0
+add $s5,$t2,$zero
+li $t3,1024
+sge $t4,$s1,$t3
+sw $t1,4192($fp)
+sw $t2,4196($fp)
+sw $t4,4200($fp)
+beq $t4,$zero,label5
+la $a0,str1
+li $v0,4
+syscall
+label5:
+li $t0,1024
+slt $t1,$s1,$t0
+sw $t1,4204($fp)
+beq $t1,$zero,label6
+li $a3,40
+add $a3,$a3,$fp
+sll $a2,$s1,2
+add $a3,$a3,$a2
+sw $s0,0($a3)
+label6:
+label4:
+li $t0,1
+add $t1,$s0,$t0
+add $s0,$t1,$zero
+slt $t2,$s0,$s2
+sw $t1,4208($fp)
+sw $t2,4212($fp)
+bne $t2,$zero,label3
+li $t0,0
+seq $t1,$s5,$t0
+sw $t1,4216($fp)
+beq $t1,$zero,label7
+la $a0,str2
+li $v0,4
+syscall
+add $a0,$s2,$zero
+li $v0,1
+syscall
+li $t0,0
+add $s0,$t0,$zero
+label8:
+li $a3,40
+add $a3,$a3,$fp
+sll $a2,$s0,2
+add $a3,$a3,$a2
+lw $t0,0($a3)
+la $a0,str3
+li $v0,4
+syscall
+add $a0,$t0,$zero
+li $v0,1
+syscall
+li $t1,1
+add $t2,$s0,$t1
+add $s0,$t2,$zero
+sle $t3,$s0,$s1
+sw $t0,4220($fp)
+sw $t2,4224($fp)
+sw $t3,4228($fp)
+bne $t3,$zero,label8
+la $a0,str3
+li $v0,4
+syscall
+label7:
+li $t0,1
+add $t1,$s2,$t0
+add $s2,$t1,$zero
+li $t2,1024
+slt $t3,$s2,$t2
+sw $t1,4232($fp)
+sw $t3,4236($fp)
+bne $t3,$zero,label2
+la $a0,str5
+li $v0,4
+syscall
+li $t0,0
+add $t1,$t0,$zero
+li $t2,1
+add $s7,$t2,$zero
+li $t3,2
+add $s3,$t3,$zero
+sw $t1,4164($fp)
+label9:
+li $t0,1
+sub $t1,$s3,$t0
+add $t2,$t1,$zero
+li $t3,2
+add $s0,$t3,$zero
+sw $t1,4240($fp)
+sw $t2,4160($fp)
+label10:
+div $s3,$s0
+mflo $t0
+mult $t0,$s0
+mflo $t1
+add $s4,$t1,$zero
+seq $t2,$s4,$s3
+sw $t0,4244($fp)
+sw $t1,4248($fp)
+sw $t2,4252($fp)
+beq $t2,$zero,label11
+li $t0,0
+add $s7,$t0,$zero
+label11:
+li $t0,1
+add $t1,$s0,$t0
+add $s0,$t1,$zero
+lw $t2,4160($fp)
+sle $t3,$s0,$t2
+sw $t1,4256($fp)
+sw $t2,4160($fp)
+sw $t3,4260($fp)
+bne $t3,$zero,label10
+li $t0,1
+seq $t1,$s7,$t0
+sw $t1,4264($fp)
+beq $t1,$zero,label12
+la $a0,str6
+li $v0,4
+syscall
+add $a0,$s3,$zero
+li $v0,1
+syscall
+lw $t0,4164($fp)
+li $t1,1
+add $t2,$t0,$t1
+add $t0,$t2,$zero
+li $t3,10
+div $t0,$t3
+mflo $t4
+mult $t4,$t3
+mflo $t5
+add $s4,$t5,$zero
+seq $t6,$s4,$t0
+sw $t0,4164($fp)
+sw $t2,4268($fp)
+sw $t4,4272($fp)
+sw $t5,4276($fp)
+sw $t6,4280($fp)
+beq $t6,$zero,label13
+la $a0,str3
+li $v0,4
+syscall
+label13:
+label12:
+li $t0,1
+add $s7,$t0,$zero
+add $t1,$s3,$t0
+add $s3,$t1,$zero
+li $t2,1024
+sle $t3,$s3,$t2
+sw $t1,4284($fp)
+sw $t3,4288($fp)
+bne $t3,$zero,label9
+la $a0,str8
+li $v0,4
+syscall
+lw $t0,4164($fp)
+add $a0,$t0,$zero
+li $v0,1
+syscall
+sw $t0,4164($fp)
+endlabel1:
+lw $s0,8($fp)
+lw $s1,12($fp)
+lw $s2,16($fp)
+lw $s3,20($fp)
+lw $s4,24($fp)
+lw $s5,28($fp)
+lw $s6,32($fp)
+lw $s7,36($fp)
+lw $ra,4($fp)
+add $sp,$fp,$zero
+lw $fp,0($fp)
+jr $ra
+label14:
+sw $ra,4($fp)
+sw $fp,0($sp)
+add $fp,$sp,$zero
+add $sp,$sp,4292
+jal label1
+endlabel14:
+lw $ra,4($fp)
+add $sp,$fp,$zero
+lw $fp,0($fp)
+jr $ra
